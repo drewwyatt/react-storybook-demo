@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const styles = {
   main: {
@@ -34,8 +34,12 @@ const styles = {
   }
 };
 
-export default class Welcome extends React.Component {
-  showApp(e) {
+export interface WelcomeProps {
+  showApp(): void;
+}
+
+export default class Welcome extends React.Component<WelcomeProps, void> {
+  showApp(e: Event): void {
     e.preventDefault();
     if(this.props.showApp) this.props.showApp();
   }

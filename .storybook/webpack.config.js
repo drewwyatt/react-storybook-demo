@@ -12,7 +12,16 @@ module.exports = {
   ],
   module: {
     loaders: [
-      // add your custom loaders.
-    ],
+      {
+        test: /\.tsx?$/,
+        loaders: [
+            'babel?presets[]=es2015',
+            'ts-loader'
+        ]
+      }
+    ]
   },
+  resolve: {
+		extensions: ['', '.ts', '.tsx', '.js', '.json', '.css', '.png', '.jpg']
+	},
 };
